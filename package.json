@@ -1,0 +1,41 @@
+{
+  "name": "repobot",
+  "version": "1.0.0",
+  "description": "bridge between chatbots and github",
+  "contributors": [
+    {
+      "name": "Samantha Emily-Rachel Belnavis",
+      "email": "samantha.b@spaceburrito.xyz"
+    }
+  ],
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --exec \"npm start\"",
+    "start": "probot run ./index.js",
+    "lint": "standard --fix"
+  },
+  "dependencies": {
+    "bitly": "^7.0.1",
+    "expect": "^25.1.0",
+    "firebase": "^7.11.0",
+    "get-value": "^3.0.1",
+    "jest": "^25.1.0",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.28",
+    "probot": "^9.10.2",
+    "probot-config": "^1.1.0",
+    "standard": "^14.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "smee-client": "^1.1.0"
+  },
+  "engines": {
+    "node": ">=10.x.x"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
+}
