@@ -20,6 +20,7 @@
     "expect": "^25.1.0",
     "firebase": "^7.11.0",
     "get-value": "^3.0.1",
+    "hookcord": "^2.0.2",
     "jest": "^25.1.0",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.28",
