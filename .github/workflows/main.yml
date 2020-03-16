@@ -1,8 +1,8 @@
 name: Deploy application to GCP App Engine
 
-on:
-  release:
-    types: [created]
+on: [push]
+#  release:
+#    types: [created]
 
 env:
   GCP_PROJECT: ${{secrets.PROJECT}}
