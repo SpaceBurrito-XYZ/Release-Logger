@@ -24,6 +24,6 @@ jobs:
         service_account_key: ${{ secrets.GCP_KEY }}
 
     - run: |
-        gcloud auth activate-service-account
+        gcloud auth activate-service-account ${{ secrets.GCP_EMAIL }} --key-file=${{ secrets.GCP_KEY }}
         gcloud config set project ${{ secrets.PROJECT }}
         gcloud app deploy
