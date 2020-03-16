@@ -5,8 +5,8 @@ on: [push]
 #    types: [created]
 
 env:
-  GCP_PROJECT: ${{secrets.PROJECT}}
-  SA_EMAIL: ${{secrets.GCP_EMAIL}}
+  GCP_PROJECT: ${{ secrets.PROJECT }}
+  SA_EMAIL: ${{ secrets.GCP_EMAIL }}
 
 jobs:
   setup-deploy:
@@ -20,10 +20,10 @@ jobs:
     - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       with:
         version: '270.0.0'
-        service_account_email: ${{secrets.GCP_EMAIL}}
-        service_account_key: ${{secrets.GCP_KEY}}
+        service_account_email: ${{ secrets.GCP_EMAIL }}
+        service_account_key: ${{ secrets.GCP_KEY }}
 
     - run: |
-        gcloud auth activate-service-account ${{secrets.GCP_EMAIL}}
-        gcloud config set project ${{secrets.PROJECT}}
+        gcloud auth activate-service-account
+        gcloud config set project ${{ secrets.PROJECT }}
         gcloud app deploy
