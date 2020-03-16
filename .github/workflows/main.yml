@@ -1,0 +1,19 @@
+name: Deploy application to GCP App Engine
+
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Initialize GC SDK
+        uses: SpaceBurrito-XYZ/deployAppEngine@master
+        with:
+          service_account_email: ${{secrets.GCP_EMAIL}}
+          service_account_key: ${{secrets.GCP_KEY}}
+          project_id: ${{secrets.PROJECT}}
+
+      - name: Print SDK version
+        run: |
+          gcloud auth activate-service-account ${{secrets.GCP_EMAIL}} --key-file=client-secret.json
+          gcloud info
