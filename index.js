@@ -58,3 +58,8 @@ module.exports = pullRequest => {
     devHook.fire().then().catch(error => { throw error})
   })
 }
+
+// ping bot every 3600 seconds to prevent sleeping
+setInterval(function() {
+  http.get('https://spaceburrito-repobot.herokuapp.com/')
+}, 3600)
